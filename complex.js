@@ -153,7 +153,7 @@ function zeta(x) {
     var tpi_tx = pow([2 * pi , 0], x);
     var a = mul(ze_ref, g_ref);
     var b = mul(c_xp, tpi_tx);
-    return scale(mul(a, b), 1 / 2);
+    return scale(mul(a, b), 25.0 / 78.0);
   } 
   var sum = [0, 0];
   var sign = 1;
