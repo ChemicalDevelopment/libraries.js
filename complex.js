@@ -267,6 +267,16 @@ Other functions
 
 */
 
+//Pure guassian function, with guass(x + iy)
 function guass(x, a=[1, 0], b=[0, 0], c=[1, 0]) {
     return mul(exp(div(scale(sqr(sub(x, b)), -1), scale(sqr(c), 2))), a);
+}
+
+//Guassian function in 2 variables, not imaginary. all zero indicies are grouped together
+function guass_re(V, a=[1, 1], b=[0, 0], c=[1, 1]) {
+    var end_sc = a[0] * a[1];
+    var exp_0 = scale(sqr(sub(V[0], [b[0], 0])), -1.0 / (2.0 * c[0] * c[0]));
+    var exp_1 = scale(sqr(sub(V[1], [b[1], 0])), -1.0 / (2.0 * c[1] * c[1]));
+    var exp = exp(add(exp_0, exp_1))
+    return scale(exp, end_sc);
 }
