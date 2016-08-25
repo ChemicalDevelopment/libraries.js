@@ -230,6 +230,10 @@ function tanh(x) {
 Product function.
 
 */
+function prod(x) {
+  return mul(prod_p1(x), prod_p2(x));
+}
+
 function prod_p1(x) {
   var p = [1, 0];
   var x_i = x;
@@ -254,4 +258,15 @@ function prod_p2(x) {
     x_i = mul(x_i, x);
   }
   return p;
+}
+
+
+/*
+
+Other functions
+
+*/
+
+function guass(x, a=[1, 0], b=[0, 0], c=[1, 0]) {
+    return mul(exp(div(scale(sqr(sub(x, b)), -1), scale(sqr(c), 2))), a);
 }
