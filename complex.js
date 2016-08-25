@@ -281,8 +281,8 @@ function guass_re(V, a, b, c) {
     if (!b) b = [0, 0]; 
     if (!c) c = [1, 1]; 
     var end_sc = a[0] * a[1];
-    var exp_0 = scale(sqr(sub(V[0], [b[0], 0])), -1.0 / (2.0 * c[0] * c[0]));
-    var exp_1 = scale(sqr(sub(V[1], [b[1], 0])), -1.0 / (2.0 * c[1] * c[1]));
-    var exp = exp(add(exp_0, exp_1))
-    return scale(exp, end_sc);
+    var exp_0 = - (V[0] - b[0]) * (V[0] - b[0]) / (2.0 * c[0] * c[0])
+    var exp_1 = - (V[1] - b[1]) * (V[1] - b[1]) / (2.0 * c[1] * c[1])
+    var exp_a = Math.exp(exp_0 + exp_1);
+    return end_sc * exp_a;
 }
