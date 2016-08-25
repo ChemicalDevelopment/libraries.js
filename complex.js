@@ -4,6 +4,8 @@ Complex functions
 
 */
 
+var pi = 3.141592653589793238;
+
 function re(a) {
   return [a[0], 0];
 }
